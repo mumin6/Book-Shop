@@ -2,10 +2,7 @@ import { model, Schema } from 'mongoose';
 import { IBook } from './book.interface';
 
 const bookSchema = new Schema<IBook>({
-  author: {
-    type: String,
-    required: true,
-  },
+  author: { type: String, required: true },
   price: { type: Number, required: true },
   title: { type: String, required: true },
   category: {
@@ -22,15 +19,6 @@ const bookSchema = new Schema<IBook>({
 });
 
 bookSchema.set('timestamps', true);
-
-// bookSchema.post("save", async function(this,next){
-//   this.findOneAndUpdate((element:IBook) => {
-//     if(element.quantity<=0){
-//      return element.inStock=false
-//     }
-//   });
-//   next()
-// })
 
 const Book = model<IBook>('Book', bookSchema);
 export default Book;

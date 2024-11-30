@@ -1,10 +1,12 @@
 import { Request, Response } from 'express';
 import { bookService } from './book.service';
+import bookValidationSchema from './book.validation';
 
 const createBook = async (req: Request, res: Response) => {
   try {
     const payload = req.body;
-    const result = await bookService.createBook(payload);
+    const zodValidatedBook=bookValidationSchema.parse(payload)
+    const result = await bookService.createBook(zodValidatedBook);
     res.json({
       message: 'Book created successfully',
       success: true,

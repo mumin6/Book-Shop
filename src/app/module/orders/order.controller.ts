@@ -1,11 +1,13 @@
 import { Request, Response } from 'express';
 import { orderService } from './order.service';
 import Book from '../book/book.model';
+import orderValidationSchema from './order.validation';
 
 const createOrder = async (req: Request, res: Response) => {
   try {
     const payload = req.body;
-    const result = await orderService.createOrder(payload);
+    const zodValidatedOrder=orderValidationSchema.parse(payload)
+    const result = await orderService.createOrder(zodValidatedOrder);
     await Book.updateOne(
       { _id: payload.product },
       {

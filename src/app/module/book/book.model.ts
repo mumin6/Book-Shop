@@ -23,5 +23,14 @@ const bookSchema = new Schema<IBook>({
 
 bookSchema.set('timestamps', true);
 
+// bookSchema.post("save", async function(this,next){
+//   this.findOneAndUpdate((element:IBook) => {
+//     if(element.quantity<=0){
+//      return element.inStock=false
+//     }
+//   });
+//   next()
+// })
+
 const Book = model<IBook>('Book', bookSchema);
 export default Book;

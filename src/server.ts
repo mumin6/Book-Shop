@@ -2,7 +2,7 @@ import app from './app';
 import mongoose from 'mongoose';
 import config from './app/config';
 
-async function main() {
+async function server() {
   try {
     await mongoose.connect(config.database_url as string);
 
@@ -14,4 +14,4 @@ async function main() {
   }
 }
 
-main();
+server();

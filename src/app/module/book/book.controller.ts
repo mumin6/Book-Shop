@@ -5,7 +5,7 @@ import bookValidationSchema from './book.validation';
 const createBook = async (req: Request, res: Response) => {
   try {
     const payload = req.body;
-    const zodValidatedBook=bookValidationSchema.parse(payload)
+    const zodValidatedBook = bookValidationSchema.parse(payload);
     const result = await bookService.createBook(zodValidatedBook);
     res.json({
       message: 'Book created successfully',
@@ -93,7 +93,7 @@ const deleteBook = async (req: Request, res: Response) => {
   }
 };
 
-export const bookControler = {
+export const bookController = {
   createBook,
   getAllBook,
   getSingleBook,

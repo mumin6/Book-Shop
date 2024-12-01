@@ -1,13 +1,12 @@
 import { Router } from 'express';
-import { bookControler } from './book.controller';
+import { bookController } from './book.controller';
 
 const bookRouter = Router();
 
-bookRouter.get('/:productId', bookControler.getSingleBook);
-bookRouter.put('/:productId', bookControler.updateBook);
-bookRouter.delete('/:productId', bookControler.deleteBook);
-bookRouter.get('/', bookControler.getAllBook);
-bookRouter.post('/create-book', bookControler.createBook);
-
+bookRouter.get('/:productId', bookController.getSingleBook);
+bookRouter.put('/:productId', bookController.updateBook);
+bookRouter.delete('/:productId', bookController.deleteBook);
+bookRouter.get('/', bookController.getAllBook);
+bookRouter.post('/create-book', bookController.createBook);
 
 export default bookRouter;

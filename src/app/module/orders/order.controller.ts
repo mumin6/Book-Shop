@@ -6,7 +6,7 @@ import orderValidationSchema from './order.validation';
 const createOrder = async (req: Request, res: Response) => {
   try {
     const payload = req.body;
-    const zodValidatedOrder=orderValidationSchema.parse(payload)
+    const zodValidatedOrder = orderValidationSchema.parse(payload);
     const result = await orderService.createOrder(zodValidatedOrder);
     await Book.updateOne(
       { _id: payload.product },
@@ -55,7 +55,7 @@ const calculateRevenue = async (req: Request, res: Response) => {
   }
 };
 
-export const OrderControler = {
+export const OrderController = {
   createOrder,
   calculateRevenue,
 };

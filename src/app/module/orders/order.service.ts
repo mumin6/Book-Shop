@@ -1,4 +1,3 @@
-
 import { IOrder } from './order.interface';
 import Order from './order.model';
 

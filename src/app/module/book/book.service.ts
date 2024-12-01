@@ -15,7 +15,7 @@ const getSingleBook = async (productId: string) => {
   return result;
 };
 const updateBook = async (productId: string, data: IBook) => {
-  const result = await Book.findByIdAndUpdate(productId, data,{new:true});
+  const result = await Book.findByIdAndUpdate(productId, data, { new: true });
   return result;
 };
 const deleteBook = async (productId: string) => {

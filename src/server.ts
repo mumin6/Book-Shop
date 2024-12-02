@@ -1,26 +1,17 @@
-import mongoose from 'mongoose';
 import app from './app';
+import mongoose from 'mongoose';
 import config from './app/config';
-import { Request, Response } from 'express';
 
-let isConnected = false;
-
-async function connectToDatabase() {
-  if (!isConnected) {
-    console.log('Connecting to MongoDB...');
-    await mongoose.connect(config.database_url as string);
-    isConnected = true;
-    console.log('Connected to MongoDB');
-  }
-}
-
-// Export serverless handler for Vercel
-export default async function  handler(req: Request, res: Response): Promise<void> {
+async function main() {
   try {
-    await connectToDatabase();
-    app(req, res);
+    await mongoose.connect(config.database_url as string);
+
+    app.listen(config.port, () => {
+      console.log(`Example app listening on port ${config.port}`);
+    });
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).send('Internal Server Error');
+    console.log(error);
   }
 }
+
+main();

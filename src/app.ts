@@ -14,5 +14,4 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Book Shop is running');
 });
 
-
 export default app;

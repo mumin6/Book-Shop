@@ -4,7 +4,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./dist/server.js",
-    "start:prod": "nodemon ./dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
     "format": "npx prettier . --write",
@@ -17,7 +16,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cors": "^2.8.5",
+    "@types/cors": "^2.8.17",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "mongodb": "^6.11.0",
@@ -29,9 +28,9 @@
     "@types/eslint__js": "^8.42.3",
     "@types/express": "^5.0.0",
     "@vercel/node": "^2.10.3",
+    "cors": "^2.8.5",
     "eslint": "^9.14.0",
     "globals": "^15.12.0",
-    "nodemon": "^3.1.7",
     "prettier": "3.3.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.2",

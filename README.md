@@ -7,13 +7,12 @@ Developed an Express application with TypeScript, integrating MongoDB with Mongo
 3. Used Mongoose for schema definition and data operations.
 4. Implemented CRUD operations for both books and orders.
 
-live link:[[https://book-shop-blue.vercel.app/]]
+live link:https://book-shop-blue.vercel.app/
 
-For local deployment use
+For local deployment use npm install to install all the required pakages
 
 ```tsx
 npm install
 ```
 
-to install all the pakages
-Also add environment variable for databse
+Also add environment variable for your databse

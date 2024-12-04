@@ -7,6 +7,6 @@ bookRouter.get('/:productId', bookController.getSingleBook);
 bookRouter.put('/:productId', bookController.updateBook);
 bookRouter.delete('/:productId', bookController.deleteBook);
 bookRouter.get('/', bookController.getAllBook);
-bookRouter.post('/create-book', bookController.createBook);
+bookRouter.post('/', bookController.createBook);
 
 export default bookRouter;
